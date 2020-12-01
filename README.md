@@ -44,3 +44,14 @@ $ flask run --port 8000
 
 ---
 
+## API Documentation
+To read the documentation, the following steps are required
+- Access the documentation directory:
+```bash
+$ cd api-documentation/
+```
+- Use a local HTTP server to read and organize JSON internal documentation
+```bash
+$ python3 -m http.server 8000 --bind 127.0.0.1
+```
+It will list all the basic examples of the API.
