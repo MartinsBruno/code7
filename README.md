@@ -18,6 +18,23 @@ An instance of MongoDB will be required. Recommended to be installed via Docker 
 ```bash
 $ docker container run --publish 27017:27017 -d --name mongodb mongo:latest
 ```
+If the seat is not on the local machine or with the standard port changed, a correction must be made on the configuration variables in the following module:
+
+- Go to the directory:
+```bash
+$ cd news/extensions/config/
+```
+
+- Edit the __init__.py file with the correct values:
+```py
+#Mongo configuration
+url = "localhost"
+port = "27017"
+
+def init_app(app):
+    app.config["SECRET_KEY"] = "\x822\x04\x1d\t\xdb\x8c\x07f\xc3\x18W\xedz\x1e\xac"
+    app.config["MONGO_URI"] = f"mongodb://{url}:{port}/sevencode"
+```
 
 ## Installation
 - Clone this repository:
